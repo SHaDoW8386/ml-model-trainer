@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    {% load compress %}
+    
+    {% compress css %}
+      <link rel='stylesheet' type="text/x-scss" href="{% static './css/Base.scss' %}" />
+    {% endcompress %}
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block styleCSS %}{% endblock  %}
+
+	<title>{% block title %}Factory{% endblock %}</title>
+</head>
+<body>
+
+
+    {% comment %} <div id="mySidebar" class="sidebar">
+        {% comment %} <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> 
+        <div class="Logo">THE <br/><span> PROJECT</span><br/>FACTORY<br/></div>
+        <div class="SideLinks">
+          <a href="{% url 'Home' %}?uid={{request.GET.uid}}&username={{request.GET.username}}" class="Link {% if request.path == "/" %}Active{% endif %}">
+            <svg width="40" height="30" viewBox="0 0 48 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24.9762 2.86112L24 2.02438L23.0238 2.86112L8.02381 15.7183L4.94511 18.3571H9H11.25V34V35.5H12.75H20.25H21.75V34V26.9286H26.25V34V35.5H27.75H35.25H36.75V34V18.2809L38.9486 18.3563L43.2249 18.5029L39.9762 15.7183L24.9762 2.86112Z" stroke="url(#paint0_linear_11_65)" stroke-width="3"/>
+              <defs>
+              <linearGradient id="paint0_linear_11_65" x1="24" y1="4" x2="24" y2="34" gradientUnits="userSpaceOnUse">
+              <stop offset="0.276042" stop-color="#7CE8FF"/>
+              <stop offset="1" stop-color="#55D0FF" stop-opacity="0.5"/>
+              </linearGradient>
+              </defs>
+              </svg>           
+            </a>
+          <a href="{% url 'ABOUT' %}?uid={{request.GET.uid}}&username={{request.GET.username}}" class="Link {% if request.path == "/about" %}Active{% endif %}">
+            <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 13.3333V21.6667M20 36.6667C29.1666 36.6667 36.6666 29.1667 36.6666 20C36.6666 10.8333 29.1666 3.33333 20 3.33333C10.8333 3.33333 3.33331 10.8333 3.33331 20C3.33331 29.1667 10.8333 36.6667 20 36.6667Z" stroke="url(#paint0_linear_59_587)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M19.9916 26.6667H20.0066H19.9916Z" fill="url(#paint1_linear_59_587)"/>
+              <path d="M19.9916 26.6667H20.0066" stroke="url(#paint2_linear_59_587)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs>
+              <linearGradient id="paint0_linear_59_587" x1="20" y1="3.33333" x2="20" y2="36.6667" gradientUnits="userSpaceOnUse">
+              <stop offset="0.276042" stop-color="#7CE8FF"/>
+              <stop offset="1" stop-color="#55D0FF" stop-opacity="0.5"/>
+              </linearGradient>
+              <linearGradient id="paint1_linear_59_587" x1="19.9991" y1="26.6667" x2="19.9991" y2="27.6667" gradientUnits="userSpaceOnUse">
+              <stop offset="0.276042" stop-color="#7CE8FF"/>
+              <stop offset="1" stop-color="#55D0FF" stop-opacity="0.5"/>
+              </linearGradient>
+              <linearGradient id="paint2_linear_59_587" x1="19.9991" y1="26.6667" x2="19.9991" y2="27.6667" gradientUnits="userSpaceOnUse">
+              <stop offset="0.276042" stop-color="#7CE8FF"/>
+              <stop offset="1" stop-color="#55D0FF" stop-opacity="0.5"/>
+              </linearGradient>
+              </defs>
+              </svg>           
+            </a>
+          <a href="{% url 'Home' %}?uid={{request.GET.uid}}&username={{request.GET.username}}" class="Link {% if request.path == "/detail" %}Active{% endif %}">
+            <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.33331 25V13.3333M8.54998 25C8.9267 23.5463 9.77653 22.2593 10.9655 21.3419C12.1545 20.4246 13.6149 19.929 15.1166 19.9333L20.8333 19.95C25.2 19.9667 28.9166 17.1667 30.2833 13.2667M8.74998 36.6667C10.1866 36.6667 11.5643 36.096 12.5801 35.0802C13.596 34.0644 14.1666 32.6866 14.1666 31.25C14.1666 29.8134 13.596 28.4357 12.5801 27.4198C11.5643 26.404 10.1866 25.8333 8.74998 25.8333C7.31339 25.8333 5.93564 26.404 4.91982 27.4198C3.904 28.4357 3.33331 29.8134 3.33331 31.25C3.33331 32.6866 3.904 34.0644 4.91982 35.0802C5.93564 36.096 7.31339 36.6667 8.74998 36.6667V36.6667ZM8.33331 13.3333C9.6594 13.3333 10.9312 12.8066 11.8688 11.8689C12.8065 10.9312 13.3333 9.65943 13.3333 8.33334C13.3333 7.00726 12.8065 5.73549 11.8688 4.79781C10.9312 3.86013 9.6594 3.33334 8.33331 3.33334C7.00723 3.33334 5.73546 3.86013 4.79778 4.79781C3.8601 5.73549 3.33331 7.00726 3.33331 8.33334C3.33331 9.65943 3.8601 10.9312 4.79778 11.8689C5.73546 12.8066 7.00723 13.3333 8.33331 13.3333V13.3333ZM31.6666 13.3333C32.9927 13.3333 34.2645 12.8066 35.2022 11.8689C36.1399 10.9312 36.6666 9.65943 36.6666 8.33334C36.6666 7.00726 36.1399 5.73549 35.2022 4.79781C34.2645 3.86013 32.9927 3.33334 31.6666 3.33334C30.3406 3.33334 29.0688 3.86013 28.1311 4.79781C27.1934 5.73549 26.6666 7.00726 26.6666 8.33334C26.6666 9.65943 27.1934 10.9312 28.1311 11.8689C29.0688 12.8066 30.3406 13.3333 31.6666 13.3333Z" stroke="url(#paint0_linear_59_590)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs>
+              <linearGradient id="paint0_linear_59_590" x1="20" y1="3.33334" x2="20" y2="36.6667" gradientUnits="userSpaceOnUse">
+              <stop offset="0.276042" stop-color="#7CE8FF"/>
+              <stop offset="1" stop-color="#55D0FF" stop-opacity="0.5"/>
+              </linearGradient>
+              </defs>
+              </svg>            
+            </a>
+            {{request.get}}
+          <a href="/database/?uid={{request.GET.uid}}&username={{request.GET.username}}" class="Link {% if request.path == "/database/" %}Active{% endif %}">
+            <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21.6833 4.86667L31.5167 9.23333C34.35 10.4833 34.35 12.55 31.5167 13.8L21.6833 18.1667C20.5667 18.6667 18.7333 18.6667 17.6167 18.1667L7.78333 13.8C4.94999 12.55 4.94999 10.4833 7.78333 9.23333L17.6167 4.86667C18.7333 4.36667 20.5667 4.36667 21.6833 4.86667V4.86667Z" stroke="url(#paint0_linear_49_172)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M5 17.9702C5 19.3702 6.05 20.9869 7.33333 21.5536L18.65 26.5869C19.5167 26.9702 20.5 26.9702 21.35 26.5869L32.6667 21.5536C33.95 20.9869 35 19.3702 35 17.9702" stroke="url(#paint1_linear_49_172)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M5 26.303C5 27.853 5.91667 29.253 7.33333 29.8863L18.65 34.9196C19.5167 35.303 20.5 35.303 21.35 34.9196L32.6667 29.8863C34.0833 29.253 35 27.853 35 26.303" stroke="url(#paint2_linear_49_172)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs>
+              <linearGradient id="paint0_linear_49_172" x1="19.65" y1="4.49167" x2="19.65" y2="18.5417" gradientUnits="userSpaceOnUse">
+              <stop offset="0.276042" stop-color="#7CE8FF"/>
+              <stop offset="1" stop-color="#55D0FF" stop-opacity="0.5"/>
+              </linearGradient>
+              <linearGradient id="paint1_linear_49_172" x1="20" y1="17.9702" x2="20" y2="26.8744" gradientUnits="userSpaceOnUse">
+              <stop offset="0.276042" stop-color="#7CE8FF"/>
+              <stop offset="1" stop-color="#55D0FF" stop-opacity="0.5"/>
+              </linearGradient>
+              <linearGradient id="paint2_linear_49_172" x1="20" y1="26.303" x2="20" y2="35.2071" gradientUnits="userSpaceOnUse">
+              <stop offset="0.276042" stop-color="#7CE8FF"/>
+              <stop offset="1" stop-color="#55D0FF" stop-opacity="0.5"/>
+              </linearGradient>
+              </defs>
+              </svg>            
+            </a>
+        </div>
+    </div> {% endcomment %}
+
+    <!-- Main Content -->
+
+    <div id="main">
+          {% block Content %}
+            {% comment %} Your Main Content Here {% endcomment %}
+          {% endblock %}
+      </div>
+
+
+      <!-- Javascript -->
+    {% comment %} <script>
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+      }
+      
+      /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+      function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+      }
+
+    </script> {% endcomment %}
+
+</body>
+</html>

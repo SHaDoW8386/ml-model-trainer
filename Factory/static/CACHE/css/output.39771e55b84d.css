@@ -1,0 +1,1 @@
+*{box-sizing:border-box}button{display:flex;align-items:center;justify-content:center;text-transform:uppercase;width:94px;height:34px;background:linear-gradient(0deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2)),linear-gradient(0deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2)),#1B1B1B;border:none;border-radius:50px}.Header{display:flex;background:red;justify-content:space-between;align-items:center}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= 'stylesheet' href = "{% static 'css/signup.css'%}">
+    <title>signup</title>
+</head>
+<body>
+    <form action="/auth/signup/" method="POST" novalidate> 
+        <div class="box">
+            <h3>Create New Account.</h3>
+            <h5>Already Registered? <span><a href="{% url 'login'%}">Login</a></span> </h5>
+                {% csrf_token %}
+                <div class="form-box">
+                    {% for field in form %}
+                        <div class="field-box">
+                            <label for="{{field.id_for_label}}">{{field.label_tag}} </label>
+                            {{field}}
+                        </div>
+                    {% endfor %}
+                </div>
+            <button class='button' type='submit'><div class ='button-text'>Sign Up </div></button>
+        </div>
+    </form>
+</body>
+</html>

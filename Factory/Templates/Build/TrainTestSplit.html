@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <title> Title  Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"  />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <link rel = "stylesheet" href = "{% static 'css/Build.css' %}">  
+</head>
+<body>
+    <div class="BOX"> 
+    <h1>Train Test Split</h1>
+    <form action="/split/?bid={{bid}}&uid={{request.GET.uid}}&username={{request.GET.username}}" method="POST" enctype="multipart/form-data">
+        <div class="TitleForm" style="padding:2rem;">
+
+            {% csrf_token %}
+            {% comment %} <input class="hide" name='bid' type="text" value={{bid}} > {% endcomment %}
+
+
+            <div class="InputBox">
+                <label for='test_size' class="label">TEST SIZE</label>
+                <input min="10" max="100" name='test_size' type="number" placeholder="range : 10% - 100%">
+            </div>
+            
+            <div class="InputBox">
+                <label for='random_state' class="label">RANDOM STATE</label>
+                <input name='random_state' type="number" placeholder="None">
+            </div>
+            
+            
+
+            
+            
+            
+
+            
+
+            <div class="InputBox">
+                <div class="label">SHUFFLE</div>
+                <select name="shuffle">
+                    <option value=1 selected> True </option>
+                    <option value=0> False </option>
+                </select>
+            </div>
+            <div class="InputBox">
+                <label for='stratify' class="label">STRATIFY</label>
+                <input name='stratify' type="text" placeholder="None">
+            </div>
+            
+            
+                
+
+            <div class="InputBox">
+                <div class="label">TARGET</div>
+                <select name="target">
+                    <option value="" selected> --Select Target--</option>
+
+                    {% for c in col %}
+                        <option value={{c}}> {{c}} </option>
+                    {% endfor %}
+                 </select>
+            </div> 
+      
+            
+            
+                {% comment %} <select multiple="" name='encoding' class="ui fluid dropdown">
+                    <option value="">--Select Features for Encoding--</option>
+                    {% for c in col %}
+                    <option value={{c}}> {{c}} </option>
+                    {% endfor %}
+                </select> {% endcomment %}
+        </div>
+        <button style="display:block; margin:4rem auto; color:white;" type='submit' class="button"><div class="buttonText">SPLIT</div></button>
+
+    </form>
+
+    
+</div>
+
+<script>
+    $('.ui.dropdown').dropdown();
+</script>
+    
+</body>
+</html>

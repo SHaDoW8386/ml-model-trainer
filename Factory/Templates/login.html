@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel = "stylesheet" href = "{% static 'css/login.css' %}">  
+</head>
+<body>
+    <form action="/auth/login/" method="POST" novalidate> 
+        <div class="box">
+            <h3>Account Details.</h3>
+            <h5>if not registered? <span class="signup"><a href="{% url 'signup' %}"> SignUp</a></span></h5>
+                {% csrf_token %}
+                {{form}}
+            <button class='button' type='submit'><div class ='button-text'>Log in </div></button>
+        </div>
+    </form>
+</body>
+</html>

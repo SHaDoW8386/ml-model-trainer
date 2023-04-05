@@ -1,0 +1,117 @@
+#mySidebar{
+
+
+}
+
+#main{
+    // margin-left: 250px;
+}
+
+.sidebar {
+height: 100%; 
+width:250px; 
+position: fixed; 
+z-index: 1; 
+top: 0;
+left: 0;
+background-color: #111;
+overflow-x: hidden;
+padding-top: 60px;
+transition: 0.5s;
+
+    .Logo{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 18px;
+        line-height: 149.6%;
+        text-align: center;
+        letter-spacing: 0.31em;
+        color: #FFFFFF;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+
+        span{
+                        
+            background: linear-gradient(180deg, #7CE8FF 27.6%, rgba(85, 208, 255, 0.5) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+        }
+
+    }
+
+    .SideLinks{
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap:2rem;
+
+        .Link{
+            cursor: pointer;
+            // background-color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            width: 100%;
+            border-bottom: 5px solid transparent;
+            border-top: 5px solid transparent;
+           
+
+            &:hover{
+                // border-left: 10px solid transparent;
+    
+                /* BLACK GRADIENT */
+                 background: 
+                            linear-gradient(#1B1B1B, #1B1B1B) padding-box,
+                            linear-gradient(180deg, #7CE8FF 27.6%, rgba(85, 208, 255, 0.5) 100%) border-box, #1B1B1B;
+                
+                // background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #1B1B1B;
+                box-shadow: inset 0px 4px 100px rgba(0, 0, 0, 0.5);
+    
+            }
+
+        }
+
+        .Active{
+    
+            /* BLACK GRADIENT */
+             background: 
+                        linear-gradient(#1B1B1B, #1B1B1B) padding-box,
+                        linear-gradient(180deg, #7CE8FF 27.6%, rgba(85, 208, 255, 0.5) 100%) border-box, #1B1B1B;
+            
+            // background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #1B1B1B;
+            box-shadow: inset 0px 4px 100px rgba(0, 0, 0, 0.5);
+
+        }
+    }
+
+}
+
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+position: absolute;
+top: 0;
+right: 25px;
+font-size: 36px;
+margin-left: 250px;
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+font-size: 20px;
+cursor: pointer;
+background:none;
+border: none;
+}
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+transition: margin-left 1s; /* If you want a transition effect */
+// padding: 20px;
+}

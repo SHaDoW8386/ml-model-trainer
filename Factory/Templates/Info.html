@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+    {% load compress %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% compress css %}
+    <link rel='stylesheet' type="text/x-scss" href="{% static './css/Info.scss' %}" />
+    {% endcompress %}
+    <title>Document</title>
+</head>
+<body>
+    {% comment %} <p>{{INFO}}</p> {% endcomment %}
+    <div class="Banner">
+        <div class="Title">{{INFO.NAME}}</div>
+    </div>
+    <div class="InfoBody">
+        <div class="InfoSide">
+            <div class="IntroBox">
+                <div class="Line"></div>
+                <div class="Intro">INTRODUCTION</div>
+            </div>
+        </div>
+        <div class="InfoContent">
+            <div class="Introduction Text">
+                <div>INTRODUCTION</div>
+                {{INFO.INTRODUCTION}}
+            </div>
+                <svg width="12" height="50" viewBox="0 0 12 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 0.226497L0.226497 6L6 11.7735L11.7735 6L6 0.226497ZM6 159.773L11.7735 154L6 148.227L0.226497 154L6 159.773ZM5 6L5 154H7L7 6H5Z" fill="url(#paint0_linear_60_592)"/>
+                <defs>
+                <linearGradient id="paint0_linear_60_592" x1="6" y1="80" x2="5" y2="80" gradientUnits="userSpaceOnUse">
+                <stop offset="0.276042" stop-color="#7CE8FF"/>
+                <stop offset="0.677083" stop-color="#67D6EF" stop-opacity="0.95"/>
+                </linearGradient>
+                </defs>
+                </svg>
+                
+            <div class="Prereq Text">
+                
+
+            </div>
+                
+            {% comment %} <svg width="12" height="50" viewBox="0 0 12 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 0.226497L0.226497 6L6 11.7735L11.7735 6L6 0.226497ZM6 159.773L11.7735 154L6 148.227L0.226497 154L6 159.773ZM5 6L5 154H7L7 6H5Z" fill="url(#paint0_linear_60_592)"/>
+                <defs>
+                <linearGradient id="paint0_linear_60_592" x1="6" y1="80" x2="5" y2="80" gradientUnits="userSpaceOnUse">
+                <stop offset="0.276042" stop-color="#7CE8FF"/>
+                <stop offset="0.677083" stop-color="#67D6EF" stop-opacity="0.95"/>
+                </linearGradient>
+                </defs>
+                </svg> {% endcomment %}
+            <div class="Model Text">
+                <div>MODEL USED</div>
+                {{INFO.MODELS}}
+
+
+            </div>
+                
+            <svg width="12" height="50" viewBox="0 0 12 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 0.226497L0.226497 6L6 11.7735L11.7735 6L6 0.226497ZM6 159.773L11.7735 154L6 148.227L0.226497 154L6 159.773ZM5 6L5 154H7L7 6H5Z" fill="url(#paint0_linear_60_592)"/>
+                <defs>
+                <linearGradient id="paint0_linear_60_592" x1="6" y1="80" x2="5" y2="80" gradientUnits="userSpaceOnUse">
+                <stop offset="0.276042" stop-color="#7CE8FF"/>
+                <stop offset="0.677083" stop-color="#67D6EF" stop-opacity="0.95"/>
+                </linearGradient>
+                </defs>
+                </svg>
+            <div class="Dataset Text">
+                
+                <!-- {{INFO}} -->
+            </div>
+                
+            <!-- <svg width="12" height="50" viewBox="0 0 12 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 0.226497L0.226497 6L6 11.7735L11.7735 6L6 0.226497ZM6 159.773L11.7735 154L6 148.227L0.226497 154L6 159.773ZM5 6L5 154H7L7 6H5Z" fill="url(#paint0_linear_60_592)"/>
+                <defs>
+                <linearGradient id="paint0_linear_60_592" x1="6" y1="80" x2="5" y2="80" gradientUnits="userSpaceOnUse">
+                <stop offset="0.276042" stop-color="#7CE8FF"/>
+                <stop offset="0.677083" stop-color="#67D6EF" stop-opacity="0.95"/>
+                </linearGradient>
+                </defs>
+                </svg> -->
+            <div class="feature Text">
+                <div>FEATURES</div>
+                {{INFO.FEATURES}}
+            </div>
+                
+            <svg width="12" height="50" viewBox="0 0 12 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 0.226497L0.226497 6L6 11.7735L11.7735 6L6 0.226497ZM6 159.773L11.7735 154L6 148.227L0.226497 154L6 159.773ZM5 6L5 154H7L7 6H5Z" fill="url(#paint0_linear_60_592)"/>
+                <defs>
+                <linearGradient id="paint0_linear_60_592" x1="6" y1="80" x2="5" y2="80" gradientUnits="userSpaceOnUse">
+                <stop offset="0.276042" stop-color="#7CE8FF"/>
+                <stop offset="0.677083" stop-color="#67D6EF" stop-opacity="0.95"/>
+                </linearGradient>
+                </defs>
+                </svg>
+            <div class="Application Text">
+                <div>APPLICATIONS</div>
+                {{INFO.APPLICATION}}
+
+            </div>
+                
+            <svg width="12" height="160" viewBox="0 0 12 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 0.226497L0.226497 6L6 11.7735L11.7735 6L6 0.226497ZM6 159.773L11.7735 154L6 148.227L0.226497 154L6 159.773ZM5 6L5 154H7L7 6H5Z" fill="url(#paint0_linear_60_592)"/>
+                <defs>
+                <linearGradient id="paint0_linear_60_592" x1="6" y1="80" x2="5" y2="80" gradientUnits="userSpaceOnUse">
+                <stop offset="0.276042" stop-color="#7CE8FF"/>
+                <stop offset="0.677083" stop-color="#67D6EF" stop-opacity="0.95"/>
+                </linearGradient>
+                </defs>
+                </svg>
+
+                <a class="button" href = "{% url 'Demo_Project' INFO.NAME %}"><div class='buttonText'>DEMO</div></a>
+        </div>
+
+    </div>
+
+</body>
+</html>

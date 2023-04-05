@@ -1,0 +1,61 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% comment %} <p>{{INFO}}</p> {% endcomment %}
+    <div class="demo">
+        <div class="maintext"><h1>Enter the Values of given fields to see the Predction of Model</h1></div>
+        <div class="maincontent">
+            <form action="/fetures/" method="post">
+                {% csrf_token %}
+                {% for i in INFO.FEATURESMODEL  %}
+                    {{i}} : <br>
+                    <input type="text" id="fname1" name={{i}}><br><br>
+                {% endfor %}
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</body>
+</html> -->
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <title> Title  Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel = "stylesheet" href = "{% static 'css/Build.css' %}">  
+</head>
+<body>
+    <div class="BOX"> 
+    <h1>ENTER PROJECT DETAIL</h1>
+    <form action="/fetures/" method="POST">
+        <div class="TitleForm">
+            
+            {% csrf_token %}
+
+
+            {% for i in INFO.FEATURESMODEL  %}
+                <div class="InputBox">
+                    <label for={{i}} class="label">{{i}}</label>
+                    <input style="width:200px;" name={{i}} style="width:400px;" type="text" placeholder={{i}}>
+                </div>
+            {% endfor %}
+            
+            
+            
+        </div>
+        <button style="display:block; margin:2rem auto;" type='submit' class="button">Submit</button>
+    </form>
+
+    
+</div>
+    
+</body>
+</html>

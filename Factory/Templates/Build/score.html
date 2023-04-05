@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <title> Title Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel = "stylesheet" href = "{% static 'css/Build.css' %}">  
+    <link rel = "stylesheet" href = "{% static 'css/score.css' %}">  
+</head>
+<body>
+    <div class="BOX"> 
+    <h1>MODEL SCORE</h1>
+    <div class="ScoreContainer">
+        <div class="Score" style="--clr:#06ccff; --num:{{score}}">
+            <div class="dot"></div>
+            <svg>
+                <circle cx="120" cy="120" r="120"></circle>
+                <circle cx="120" cy="120" r="120"></circle>
+            </svg>
+            <div class="number">
+                <h2>{{score}}<span>%</span></h2>
+                <!-- <p>SCORE</p> -->
+            </div>
+
+        </div>
+    </div>
+    <form action="/discard/?uid={{request.GET.uid}}&username={{request.GET.username}}"  method="POST" enctype="multipart/form-data">
+        <div class="TitleForm" style="margin-top:4rem;">
+
+            {% csrf_token %}
+            <input name='uid'  value={{uid}} type="text" class="hide" hidden/>
+            <input name='bid'  value={{bid}} type="text" class="hide" hidden/>
+            <!-- <div class="InputBox">
+                <label for='title' class="label">TITLE</label>
+                <input name='title' style="width:400px;" type="text" placeholder=" Title">
+            </div> -->
+            
+            <button type='submit' class="button"><div class="buttonText">DISCARD</div></button>
+            <a href="{% url 'SAVE' %}?uid={{request.GET.uid}}&username={{request.GET.username}}" type='submit' class="button"><div class="buttonText">SAVE</div></a>
+        </div>
+    </form>
+
+    
+</div>
+    
+</body>
+</html>

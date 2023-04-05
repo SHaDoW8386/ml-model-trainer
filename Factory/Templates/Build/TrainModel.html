@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <title> Title  Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel = "stylesheet" href = "{% static 'css/Build.css' %}">  
+</head>
+<body>
+    <div class="BOX"> 
+    <h1>{{mlmodel.MODELNAME}}</h1>
+    <form action="/{{mlmodel.MODELID}}/?uid={{request.GET.uid}}&username={{request.GET.username}}" method="POST" enctype="multipart/form-data">
+        <div class="TitleForm" style="width:1200px;">
+
+            {% csrf_token %}
+
+            <input type='text' name='bid' class='hide' value={{mlbuild.BID}}>
+
+
+
+            {% for param in mlmodel.PARAMS %}
+                <div class="InputBox">
+                    <label for={{param.PARAMNAME}} class="label">{{param.PARAMNAME}}</label>
+                    <input name={{param.PARAMNAME}}  type="text" value={{param.DEFAULT_VALUE}}>
+                </div>
+
+            {% endfor %}
+            
+        </div>
+        <button style="display:block; margin:4rem auto; color:white;" type='submit' class="button">TRAIN</button>
+    </form>
+
+
+</div>
+    
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <title> Title  Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel = "stylesheet" href = "{% static 'css/Build.css' %}">  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    
+<div class="BOX">
+    <h1>UPLOAD DATASET</h1>
+    <form action="/upload/" method="POST" class="DatasetForm" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="Upload">
+            <input type="file" name='file' id="uploadme" hidden/>
+            <div class='button' type="button" id="clickme">
+                <div class='buttonText'>Upload</div>
+            </div>
+            <button type='submit' class="button-round">-></a>
+        </div>
+    </form>
+</div>
+<script>
+    $(function(){
+        $('#clickme').click(function(){
+            $('#uploadme').click();
+        });
+    });
+</script>
+    
+</body>
+</html>

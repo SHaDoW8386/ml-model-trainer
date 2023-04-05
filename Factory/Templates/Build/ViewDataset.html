@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <title> Title  Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    {% comment %} <link rel = "stylesheet" href = "{% static 'css/Build.css' %}">   {% endcomment %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/css/bootstrap.min.css" integrity="sha512-CpIKUSyh9QX2+zSdfGP+eWLx23C8Dj9/XmHjZY2uDtfkdLGo0uY12jgcnkX9vXOgYajEKb/jiw67EYm+kBf+6g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/js/bootstrap.min.js" integrity="sha512-5BqtYqlWfJemW5+v+TZUs22uigI8tXeVah5S/1Z6qBLVO7gakAOtkOzUtgq6dsIo5c0NJdmGPs0H9I+2OHUHVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <style> 
+        .TitleForm{
+        display: flex;
+        /* flex-direction: column; */
+        flex-wrap: wrap;
+        /* flex-direction: column; */
+        align-items: center;
+        position: relative;
+        gap:2rem;
+        width:600px;
+        justify-content: center;
+        /* width: fit-content; */
+    }
+    
+    option{
+        background-color: white;
+        border-radius: 25px;
+        /* height:250px; */
+    }
+    
+    input[type='file']::-webkit-file-upload-button{
+        /* display: none; */
+        /* opacity: 0; */
+        background: none;
+        border: none;
+        margin-top: 9px;
+        margin-left: -80px;
+    }
+    
+    .InputBox{
+        display:flex;
+        flex-direction: column;
+        gap:0.5rem;
+    }
+    
+    .label{
+        font-family: 'Lexend';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 25px;
+        /* identical to box height */
+    
+        display: flex;
+        align-items: center;
+        letter-spacing: 0.15em;
+    
+        color: #FFFFFF;
+    
+    }
+    
+    .input, .select
+    {
+        width: 250px;
+        height: 45px;
+        border: 2px solid transparent;
+        padding: 0 1rem;
+        background: linear-gradient( #1B1B1B, #1B1B1B) padding-box,
+        linear-gradient(90deg, #7CE8FF 100% ,#55D0FF 50%) border-box;
+        border-radius: 50px;
+        font-family: 'Lexend';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        letter-spacing: 0.15em;
+        
+        color: #FFFFFF;
+    
+    
+    }
+    
+    .hide{
+        display:none !important;
+    }
+    
+    
+    input[type='button']{
+        width: 250px;
+        justify-content: center;
+        padding: 0;
+    
+    }
+    
+    
+    
+    .button-round {
+        cursor: pointer;
+        border: 2px solid transparent;
+        /* padding: 1rem; */
+        width: 55px;
+        height: 55px;
+        background: linear-gradient( #1B1B1B, #1B1B1B) padding-box,
+        linear-gradient(90deg, #7CE8FF 100% ,#55D0FF 50%) border-box;
+        border-radius: 50px;
+        font-family: 'Lexend';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        /* identical to box height */
+        list-style: none;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        letter-spacing: 0.15em;
+        position: absolute;
+        right: 0;
+        
+        color: #FFFFFF;
+    
+      }
+    
+      .button-round:hover{
+        background: linear-gradient(180deg, #7CE8FF 27.6%, rgba(85, 208, 255, 0.5) 100%);
+        border:1px solid #1B1B1B;
+    
+      }
+        .button{
+        cursor: pointer;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left:45%;
+        /* // text-align: center; */
+        text-transform: uppercase;
+        text-decoration: none;
+        width: 200px;
+        height: 45px;
+        margin-top: 2rem;
+        
+        background: 
+        linear-gradient(#1B1B1B, #1B1B1B) padding-box,
+        linear-gradient(180deg, #7CE8FF 27.6%, rgba(85, 208, 255, 0.5) 100%) border-box;
+        border: 2px solid transparent;
+        border-radius: 50px;
+    
+      }
+      
+    
+      .button:hover{
+        background: linear-gradient(180deg, #7CE8FF 27.6%, rgba(85, 208, 255, 0.5) 100%);
+        border:1px solid #1B1B1B;
+        }
+    
+        
+    
+        .buttonText:hover{
+            background : linear-gradient(#1B1B1B, #1B1B1B);
+            -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        }
+
+        .multiple-select{
+            background:white !important;
+            border-radius:12px;
+            height:150px;
+            width:200px;
+            padding:1rem;
+            
+        }
+
+        multiple-option{
+            background:white !important;
+            color:white !important;
+        }
+    
+    
+        .buttonText{
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 150%;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            text-transform: uppercase;
+            
+            /* ICON GRADIENT */
+            
+            background: linear-gradient(180deg, #7CE8FF 27.6%, rgba(85, 208, 255, 0.5) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+    
+        }
+    
+    
+    .Upload{
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    </style>
+    
+</head>
+<body style="background:#1B1B1B; color:white;">
+
+    {% comment %} {{datatable}} {% endcomment %}
+    <div class="container" style="background:#1B1B1B; display:block; margin:0 auto">
+        <table class="table table-bordered" id="example" style="text-align:center;">
+            <thead class="table-success">
+                <tr>
+                {% for head in tableHead %}
+                    <th> {{head}} </th>
+
+                {% endfor %}
+                </tr>
+            </thead>
+            {% for vals in tableValue %}
+            <tr>
+                    {% for val in vals %}
+                        <td style="color:white;">{{val}}</td>
+                    {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+   
+    <a href="/split/?bid={{bid}}&uid={{request.GET.uid}}&username={{request.GET.username}}"  class="button"><div class="buttonText">Train Test Split</div></a>
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,188 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    
+    
+}
+
+.Banner{
+    position: relative;
+    height:40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('../Images/BannerBg.jpg');
+    background-size: cover;
+    z-index: -2;
+
+    &::after{
+        content: " ";
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.9);
+        z-index: -1;
+    }
+
+
+    .Title{
+        font-family: 'Playfair Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 42px;
+        line-height: 170%;
+        /* or 71px */
+        
+        display: flex;
+        align-items: center;
+        text-align: center;
+        text-transform: capitalize;
+        
+        color: #FFFFFF;
+        
+    }
+
+}
+
+.InfoBody{
+    display: flex;
+    height:60vh;
+
+
+    .InfoSide{
+        width:25%;
+        // position: relative;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #282828;
+
+        .IntroBox{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+
+            .Line{
+                height:150px;
+                width:5px;
+                background: linear-gradient(180deg, #7CE8FF 27.6%, rgba(85, 208, 255, 0.5) 100%);
+            }
+
+            .Intro{
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 800;
+                font-size: 18px;
+                line-height: 149.6%;
+                /* identical to box height, or 27px */
+                
+                letter-spacing: 0.31em;
+                
+                color: #FFFFFF;
+
+            }
+        }
+    }
+
+    .InfoContent{
+        height:60vh;
+        width: 75%;
+        overflow: auto;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #1B1B1B;
+        display: grid;
+        // margin:0 auto ;
+        gap:1rem;
+        padding: 2rem;
+    
+
+        &::-webkit-scrollbar{
+            // display: none;
+        }
+
+        .Text{
+            // height: 500px;
+            background-color: red;
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 170%;
+            text-align: center;
+            /* or 41px */
+            /* ICON GRADIENT */
+            display: block;
+            margin: 0 auto;
+            
+            background: linear-gradient(180deg, #7CE8FF 27.6%, rgba(85, 208, 255, 0.5) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            }
+
+        svg{
+            display: block;
+            margin: 0 auto;
+        }
+
+        .button{
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            // align-items: center;
+            // justify-content: center;
+            display: block;
+            margin: 0 auto;
+            // text-align: center;
+            text-transform: uppercase;
+            
+            width: 94px;
+            height: 34px;
+            
+            background: 
+            linear-gradient(#1B1B1B, #1B1B1B) padding-box,
+            linear-gradient(180deg, #7CE8FF 27.6%, rgba(85, 208, 255, 0.5) 100%) border-box;
+            border: 2px solid transparent;
+            border-radius: 50px;
+        
+            &:hover{
+                background: linear-gradient(180deg, #7CE8FF 27.6%, rgba(85, 208, 255, 0.5) 100%);
+                border:1px solid #1B1B1B;
+        
+                .buttonText{
+                    background : linear-gradient(#1B1B1B, #1B1B1B);
+                    -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                text-fill-color: transparent;
+                }
+        
+            }
+        
+            .buttonText{
+                font-family: 'Playfair Display';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 200%;
+                display: block;
+                /* justify-content: center; */
+                margin: auto;
+                text-align: center;
+                text-transform: uppercase;
+                background: linear-gradient(180deg,#7CE8FF 27.6%,rgba(85,208,255,0.5) 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                text-fill-color: transparent;
+        
+            }
+        
+        }
+        
+    }
+}

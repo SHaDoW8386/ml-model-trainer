@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <title> Title  Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel = "stylesheet" href = "{% static 'css/Build.css' %}">  
+</head>
+<body>
+    <div class="BOX"> 
+    <h1>ENTER PROJECT DETAIL</h1>
+    <form action="/upload/?uid={{request.GET.uid}}&username={{request.GET.username}}" method="POST" enctype="multipart/form-data">
+        <div class="TitleForm" style="width:800px; gap:3rem;">
+            <input name='uid' value={{uid}} type="text" class="hide" hidden/>
+
+            {% csrf_token %}
+
+
+            <div class="InputBox">
+                <label for='title' class="label">TITLE</label>
+                <input name='title' type="text" placeholder=" Title">
+            </div>
+            
+            <div class="InputBox">
+                <label for='dataset' class="label">DATASET (!preprocessed)</label>
+                <input name='dataset' type="file" placeholder=" Dataset">
+            </div>
+
+            <div class="InputBox">
+                <div class="label">TYPE</div>
+                <select name="m_type">
+                    <option value="Select Model Type" selected>-- Select Model Type --</option>
+                    <option value="Regression"> Regression </option>
+                    <option value="Classification"> Classification </option>
+                </select>
+            </div>
+            
+            <div class="InputBox">
+                <div class="label">MODEL</div>
+                <select name="model">
+                    <option value="Select Model Type" selected>-- Select Model --</option>
+                    {% for model in models %}
+                    <option value={{model.MODELID}}>{{model.MODELNAME}}  </option>
+                    {% comment %} <option value="Classification"> Classification </option> {% endcomment %}
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <button style="display:block; margin:2rem auto; color:white;" type='submit' class="button"><div class="buttonText">VIEW DATASET</div></button>
+
+    </form>
+
+    
+</div>
+    
+</body>
+</html>

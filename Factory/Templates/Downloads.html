@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <title> Title  Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel = "stylesheet" href = "{% static 'css/Build.css' %}">  
+</head>
+<body>
+    <div class="BOX"> 
+    <h1>{{modelDetail.TITLE}}</h1>
+    {% comment %} <form action="/upload/?uid={{request.GET.uid}}&username={{request.GET.username}}" method="POST" enctype="multipart/form-data"> {% endcomment %}
+        <div class="TitleForm" style='width:1200px; gap:4rem'>
+
+
+            <div style="display:flex; gap:1rem; align-items:center;">
+                <div class="button" style='margin:0'><div class="buttonText">X_TRAIN</div></div>
+                <a href="{% url 'download_file' %}?filepath={{modelDetail.TRAIN_X}}">
+                    <svg width="51" height="51" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.6415 25.2765L24.9895 30.595L30.3081 25.247M24.9306 9.2618L24.9891 30.4492Z" fill="url(#paint0_linear_49_192)"/>
+                        <path d="M19.6415 25.2765L24.9895 30.595L30.3081 25.247M24.9306 9.2618L24.9891 30.4492" stroke="url(#paint1_linear_49_192)" stroke-width="5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M41.7682 25.8821C41.7936 35.0904 35.5642 42.5659 25.1476 42.5947C14.731 42.6235 8.46041 35.1824 8.43498 25.9741" stroke="url(#paint2_linear_49_192)" stroke-width="5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs>
+                        <linearGradient id="paint0_linear_49_192" x1="30.2934" y1="19.9137" x2="19.6267" y2="19.9431" gradientUnits="userSpaceOnUse">
+                        <stop offset="0.276042" stop-color="#7CE8FF"/>
+                        <stop offset="1" stop-color="#55D0FF" stop-opacity="0.5"/>
+                        </linearGradient>
+                        <linearGradient id="paint1_linear_49_192" x1="30.2934" y1="19.9137" x2="19.6267" y2="19.9431" gradientUnits="userSpaceOnUse">
+                        <stop offset="0.276042" stop-color="#7CE8FF"/>
+                        <stop offset="1" stop-color="#55D0FF" stop-opacity="0.5"/>
+                        </linearGradient>
+                        <linearGradient id="paint2_linear_49_192" x1="41.7912" y1="34.2154" x2="8.45799" y2="34.3074" gradientUnits="userSpaceOnUse">
+                        <stop offset="0.276042" stop-color="#7CE8FF"/>
+                        <stop offset="1" stop-color="#55D0FF" stop-opacity="0.5"/>
+                        </linearGradient>
+                        </defs>
+                        </svg>
+                </a>
+            </div>
+
+            <div style="display:flex; gap:1rem; align-items:center;">
+                <div class="button" style='margin:0'><div class="buttonText">X_TEST</div></div>
+                <a href="{% url 'download_file' %}?filepath={{modelDetail.TEST_X}}">
+                    <svg width="51" height="51" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.6415 25.2765L24.9895 30.595L30.3081 25.247M24.9306 9.2618L24.9891 30.4492Z" fill="url(#paint0_linear_49_192)"/>
+                        <path d="M19.6415 25.2765L24.9895 30.595L30.3081 25.247M24.9306 9.2618L24.9891 30.4492" stroke="url(#paint1_linear_49_192)" stroke-width="5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M41.7682 25.8821C41.7936 35.0904 35.5642 42.5659 25.1476 42.5947C14.731 42.6235 8.46041 35.1824 8.43498 25.9741" stroke="url(#paint2_linear_49_192)" stroke-width="5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs>
+                        <linearGradient id="paint0_linear_49_192" x1="30.2934" y1="19.9137" x2="19.6267" y2="19.9431" gradientUnits="userSpaceOnUse">
+                        <stop offset="0.276042" stop-color="#7CE8FF"/>
+                        <stop offset="1" stop-color="#55D0FF" stop-opacity="0.5"/>
+                        </linearGradient>
+                        <linearGradient id="paint1_linear_49_192" x1="30.2934" y1="19.9137" x2="19.6267" y2="19.9431" gradientUnits="userSpaceOnUse">
+                        <stop offset="0.276042" stop-color="#7CE8FF"/>
+                        <stop offset="1" stop-color="#55D0FF" stop-opacity="0.5"/>
+                        </linearGradient>
+                        <linearGradient id="paint2_linear_49_192" x1="41.7912" y1="34.2154" x2="8.45799" y2="34.3074" gradientUnits="userSpaceOnUse">
+                        <stop offset="0.276042" stop-color="#7CE8FF"/>
+                        <stop offset="1" stop-color="#55D0FF" stop-opacity="0.5"/>
+                        </linearGradient>
+                        </defs>
+                        </svg>
+                </a>
+            </div>
+
+
+            <div style="display:flex; gap:1rem; align-items:center;">
+                <div class="button" style='margin:0'><div class="buttonText">Y_TRAIN</div></div>
+                <a href="{% url 'download_file' %}?filepath={{modelDetail.TRAIN_Y}}">
+                    <svg width="51" height="51" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.6415 25.2765L24.9895 30.595L30.3081 25.247M24.9306 9.2618L24.9891 30.4492Z" fill="url(#paint0_linear_49_192)"/>
+                        <path d="M19.6415 25.2765L24.9895 30.595L30.3081 25.247M24.9306 9.2618L24.9891 30.4492" stroke="url(#paint1_linear_49_192)" stroke-width="5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M41.7682 25.8821C41.7936 35.0904 35.5642 42.5659 25.1476 42.5947C14.731 42.6235 8.46041 35.1824 8.43498 25.9741" stroke="url(#paint2_linear_49_192)" stroke-width="5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs>
+                        <linearGradient id="paint0_linear_49_192" x1="30.2934" y1="19.9137" x2="19.6267" y2="19.9431" gradientUnits="userSpaceOnUse">
+                        <stop offset="0.276042" stop-color="#7CE8FF"/>
+                        <stop offset="1" stop-color="#55D0FF" stop-opacity="0.5"/>
+                        </linearGradient>
+                        <linearGradient id="paint1_linear_49_192" x1="30.2934" y1="19.9137" x2="19.6267" y2="19.9431" gradientUnits="userSpaceOnUse">
+                        <stop offset="0.276042" stop-color="#7CE8FF"/>
+                        <stop offset="1" stop-color="#55D0FF" stop-opacity="0.5"/>
+                        </linearGradient>
+                        <linearGradient id="paint2_linear_49_192" x1="41.7912" y1="34.2154" x2="8.45799" y2="34.3074" gradientUnits="userSpaceOnUse">
+                        <stop offset="0.276042" stop-color="#7CE8FF"/>
+                        <stop offset="1" stop-color="#55D0FF" stop-opacity="0.5"/>
+                        </linearGradient>
+                        </defs>
+                        </svg>
+                </a>
+            </div>
+
+
+            <div style="display:flex; gap:1rem; align-items:center;">
+                <div class="button" style='margin:0'><div class="buttonText">Y_TEST</div></div>
+                <a href="{% url 'download_file' %}?filepath={{modelDetail.TEST_Y}}">
+                    <svg width="51" height="51" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.6415 25.2765L24.9895 30.595L30.3081 25.247M24.9306 9.2618L24.9891 30.4492Z" fill="url(#paint0_linear_49_192)"/>
+                        <path d="M19.6415 25.2765L24.9895 30.595L30.3081 25.247M24.9306 9.2618L24.9891 30.4492" stroke="url(#paint1_linear_49_192)" stroke-width="5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M41.7682 25.8821C41.7936 35.0904 35.5642 42.5659 25.1476 42.5947C14.731 42.6235 8.46041 35.1824 8.43498 25.9741" stroke="url(#paint2_linear_49_192)" stroke-width="5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs>
+                        <linearGradient id="paint0_linear_49_192" x1="30.2934" y1="19.9137" x2="19.6267" y2="19.9431" gradientUnits="userSpaceOnUse">
+                        <stop offset="0.276042" stop-color="#7CE8FF"/>
+                        <stop offset="1" stop-color="#55D0FF" stop-opacity="0.5"/>
+                        </linearGradient>
+                        <linearGradient id="paint1_linear_49_192" x1="30.2934" y1="19.9137" x2="19.6267" y2="19.9431" gradientUnits="userSpaceOnUse">
+                        <stop offset="0.276042" stop-color="#7CE8FF"/>
+                        <stop offset="1" stop-color="#55D0FF" stop-opacity="0.5"/>
+                        </linearGradient>
+                        <linearGradient id="paint2_linear_49_192" x1="41.7912" y1="34.2154" x2="8.45799" y2="34.3074" gradientUnits="userSpaceOnUse">
+                        <stop offset="0.276042" stop-color="#7CE8FF"/>
+                        <stop offset="1" stop-color="#55D0FF" stop-opacity="0.5"/>
+                        </linearGradient>
+                        </defs>
+                        </svg>
+                </a>
+            </div>
+
+
+            <div style="display:flex; gap:1rem; align-items:center;">
+                <div class="button" style='margin:0; width:300px;'><div class="buttonText">FEATURES ENCODER</div></div>
+                <a href="{% url 'download_file' %}?filepath={{modelDetail.F_ENCODER}}">
+                    <svg width="51" height="51" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.6415 25.2765L24.9895 30.595L30.3081 25.247M24.9306 9.2618L24.9891 30.4492Z" fill="url(#paint0_linear_49_192)"/>
+                        <path d="M19.6415 25.2765L24.9895 30.595L30.3081 25.247M24.9306 9.2618L24.9891 30.4492" stroke="url(#paint1_linear_49_192)" stroke-width="5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M41.7682 25.8821C41.7936 35.0904 35.5642 42.5659 25.1476 42.5947C14.731 42.6235 8.46041 35.1824 8.43498 25.9741" stroke="url(#paint2_linear_49_192)" stroke-width="5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs>
+                        <linearGradient id="paint0_linear_49_192" x1="30.2934" y1="19.9137" x2="19.6267" y2="19.9431" gradientUnits="userSpaceOnUse">
+                        <stop offset="0.276042" stop-color="#7CE8FF"/>
+                        <stop offset="1" stop-color="#55D0FF" stop-opacity="0.5"/>
+                        </linearGradient>
+                        <linearGradient id="paint1_linear_49_192" x1="30.2934" y1="19.9137" x2="19.6267" y2="19.9431" gradientUnits="userSpaceOnUse">
+                        <stop offset="0.276042" stop-color="#7CE8FF"/>
+                        <stop offset="1" stop-color="#55D0FF" stop-opacity="0.5"/>
+                        </linearGradient>
+                        <linearGradient id="paint2_linear_49_192" x1="41.7912" y1="34.2154" x2="8.45799" y2="34.3074" gradientUnits="userSpaceOnUse">
+                        <stop offset="0.276042" stop-color="#7CE8FF"/>
+                        <stop offset="1" stop-color="#55D0FF" stop-opacity="0.5"/>
+                        </linearGradient>
+                        </defs>
+                        </svg>
+                </a>
+            </div>
+
+
+            <div style="display:flex; gap:1rem; align-items:center;">
+                <div class="button" style='margin:0; width:300px;'><div class="buttonText">TARGET ENCODER</div></div>
+                <a href="{% url 'download_file' %}?filepath={{modelDetail.T_ENCODER}}">
+                    <svg width="51" height="51" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.6415 25.2765L24.9895 30.595L30.3081 25.247M24.9306 9.2618L24.9891 30.4492Z" fill="url(#paint0_linear_49_192)"/>
+                        <path d="M19.6415 25.2765L24.9895 30.595L30.3081 25.247M24.9306 9.2618L24.9891 30.4492" stroke="url(#paint1_linear_49_192)" stroke-width="5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M41.7682 25.8821C41.7936 35.0904 35.5642 42.5659 25.1476 42.5947C14.731 42.6235 8.46041 35.1824 8.43498 25.9741" stroke="url(#paint2_linear_49_192)" stroke-width="5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs>
+                        <linearGradient id="paint0_linear_49_192" x1="30.2934" y1="19.9137" x2="19.6267" y2="19.9431" gradientUnits="userSpaceOnUse">
+                        <stop offset="0.276042" stop-color="#7CE8FF"/>
+                        <stop offset="1" stop-color="#55D0FF" stop-opacity="0.5"/>
+                        </linearGradient>
+                        <linearGradient id="paint1_linear_49_192" x1="30.2934" y1="19.9137" x2="19.6267" y2="19.9431" gradientUnits="userSpaceOnUse">
+                        <stop offset="0.276042" stop-color="#7CE8FF"/>
+                        <stop offset="1" stop-color="#55D0FF" stop-opacity="0.5"/>
+                        </linearGradient>
+                        <linearGradient id="paint2_linear_49_192" x1="41.7912" y1="34.2154" x2="8.45799" y2="34.3074" gradientUnits="userSpaceOnUse">
+                        <stop offset="0.276042" stop-color="#7CE8FF"/>
+                        <stop offset="1" stop-color="#55D0FF" stop-opacity="0.5"/>
+                        </linearGradient>
+                        </defs>
+                        </svg>
+                </a>
+            </div>
+
+
+            <div style="display:flex; gap:1rem; align-items:center;">
+                <div class="button" style='margin:0; width:400px;'><div class="buttonText">MACHINE LEARNING MODEL</div></div>
+                <a href="{% url 'download_file' %}?filepath={{modelDetail.MODEL}}">
+                    <svg width="51" height="51" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.6415 25.2765L24.9895 30.595L30.3081 25.247M24.9306 9.2618L24.9891 30.4492Z" fill="url(#paint0_linear_49_192)"/>
+                        <path d="M19.6415 25.2765L24.9895 30.595L30.3081 25.247M24.9306 9.2618L24.9891 30.4492" stroke="url(#paint1_linear_49_192)" stroke-width="5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M41.7682 25.8821C41.7936 35.0904 35.5642 42.5659 25.1476 42.5947C14.731 42.6235 8.46041 35.1824 8.43498 25.9741" stroke="url(#paint2_linear_49_192)" stroke-width="5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs>
+                        <linearGradient id="paint0_linear_49_192" x1="30.2934" y1="19.9137" x2="19.6267" y2="19.9431" gradientUnits="userSpaceOnUse">
+                        <stop offset="0.276042" stop-color="#7CE8FF"/>
+                        <stop offset="1" stop-color="#55D0FF" stop-opacity="0.5"/>
+                        </linearGradient>
+                        <linearGradient id="paint1_linear_49_192" x1="30.2934" y1="19.9137" x2="19.6267" y2="19.9431" gradientUnits="userSpaceOnUse">
+                        <stop offset="0.276042" stop-color="#7CE8FF"/>
+                        <stop offset="1" stop-color="#55D0FF" stop-opacity="0.5"/>
+                        </linearGradient>
+                        <linearGradient id="paint2_linear_49_192" x1="41.7912" y1="34.2154" x2="8.45799" y2="34.3074" gradientUnits="userSpaceOnUse">
+                        <stop offset="0.276042" stop-color="#7CE8FF"/>
+                        <stop offset="1" stop-color="#55D0FF" stop-opacity="0.5"/>
+                        </linearGradient>
+                        </defs>
+                        </svg>
+                </a>
+            </div>
+
+
+            {% comment %} <div class="InputBox">
+                <label for='title' class="label">TITLE</label>
+                <input name='title' style="width:400px;" type="text" placeholder=" Title">
+            </div> {% endcomment %}
+            
+        </div>
+    </form>
+
+    
+</div>
+    
+</body>
+</html>

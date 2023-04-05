@@ -1,0 +1,31 @@
+# Project Setup
+
+Create Folder Major Project
+
+open powershell
+python -m venv FactEnv
+exit
+
+open git bash here
+git clone https://github.com/The-Project-Factory/project-factory.git
+exit
+
+open powershell
+./FacrEnv/Scripts/Activate
+cd project-factory
+python -m pip install -r requirement.txt
+
+
+
+#git caution
+git status
+#if clean
+git pull
+
+git status
+git add .  or  git add -A
+git commit -m "comment"
+git pull
+git push
+
+send watsapp msg after pushing
